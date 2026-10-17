@@ -314,8 +314,184 @@ img {
   padding: 8px;
 }
 
-.uudiskiri .nupp {
-  padding: 8px 16px;
+.nupp.toode {
+  padding: 9px 30px;
+  font-weight: 650;
+}
+
+/*Toote css*/
+
+
+.tootestlingid a {
+  text-decoration: none;
+}
+
+.tootestlingid a, 
+.tootestlingid p {
+  display: inline;
+}
+
+.piltkirjeldus {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.tootekirjeldus {
+  gap: 10px;
+  padding-bottom: 50px;
+}
+
+.tootepildid, 
+.tootestlingid {
+  padding-top: 15px;
+  margin-right: 15px;
+}
+
+.tootepildid {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.7rem;
+}
+
+.tootepiltsuur, 
+.vaiksedpildid p {
+  border: 1.5px solid var(--hall);
+  border-radius: var(--raadius);
+}
+
+.tootepiltsuur {
+  background: var(--beez);
+  width: 100%;
+  height: 500px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.vaiksedpildid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+
+.vaiksedpildid p{
+  background: var(--beez);
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.tootepea,
+.tootekiri,
+.totoevalik {
+  margin-bottom: 15px;
+}
+
+.tootepea h1 {
+  font-size: 1.9rem;
+  margin-bottom: 5px;
+}
+
+.tootepea h2 {
+  font-size: 1.6rem;
+}
+
+.tootekiri {
+  display: block;
+  font-size: 1rem;
+
+}
+
+.tootevalik {
+  padding: 8px 1px;
+}
+
+.valikunimi {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1rem;
+}
+
+.varviandmed {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+}
+
+.kogusevalik {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.varviandmed p {
+  border: 1.5px solid var(--hall);
+  border-radius: var(--raadius);
+  padding: 4px 10px;
+}
+
+.varviandmedkogus {
+  border: 1.5px solid var(--hall);
+  border-radius: var(--raadius);
+  padding: 4px 6px;
+}
+
+.varviandmedkogus input{
+  width: 50px;
+  border: none;
+  outline: none;
+  font-size: 1rem;
+  background: white;
+}
+
+.varviandmed p:hover,
+.varviandmed p:focus,
+.varviandmed .akt {
+  cursor: pointer;
+  background: var(--tume);
+  border-color: var(--tume);
+  color: white;
+}
+
+.tootelisa {
+  margin-top: 20px;
+  border-top: 1px solid var(--hall);
+}
+
+.tootelisa details {
+  border-bottom: 1px solid var(--hall);
+  padding: 15px 5px;
+}
+
+.tootelisa summary,
+.valikunimi {
+  font-weight: 500;
+}
+
+.tootelisa summary {
+  cursor: pointer;
+}
+
+.tootelisa p,
+.tootelisa ul {
+  margin-left: 15px;
+}
+
+.kirjeldusepunktid {
+  padding-top: 13px;
+}
+
+.lisakorvinupp.toode {
+  padding: 10px 40px;
+}
+
+.lisakorvinupp {
+  padding: 14px 0px;
+
 }
 
 @media (max-width: 800px) {
@@ -342,6 +518,24 @@ img {
 
   .eelised ul {
     grid-template-columns: 1fr;
+  }
+
+  .tootepiltsuur {
+    height: 700px;
+  }
+
+  .vaiksedpildid p {
+    height: 200px;
+  }
+
+  .piltkirjeldus,
+  .tootepildid {
+    display: block;
+    padding-bottom: 60px;
+  }
+  
+  .varviandmed {
+    font-size: 1.1rem;
   }
 
 }
