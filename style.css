@@ -559,6 +559,42 @@ img {
     border-radius: var(--raadius);
 }
 
+/* Ostukorvi nuppude kujundus */
+.kogus-vali {
+    width: 60px;
+    height: 27px;
+    padding: 3px 6px;
+    margin-left: 5px;
+    border: 2px solid var(--hall);
+    border-radius: var(--raadius);
+    background: white;
+    color: var(--tume);
+    font-size: 0.9rem;
+}
+
+.eemalda {
+    background: none;
+    border: none;
+    color: var(--tume);
+    text-decoration: underline;
+    font-family: inherit;
+    font-size: 0.9rem;
+    cursor: pointer;
+    padding: 0;
+}
+
+.eemalda:hover {
+    color: var(--hall);
+}
+
+.korvi-rida .hind {
+    font-weight: bold;
+}
+
+.korvi-rida h2 a {
+    text-decoration: none;
+}
+
 @media (max-width: 800px) {
   .menuu {
     display: none; 
