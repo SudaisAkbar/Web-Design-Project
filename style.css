@@ -494,6 +494,71 @@ img {
 
 }
 
+/* Ostukorvi toodete paigutus */
+.korvi-tooted {
+    list-style: none;
+    padding: 0;
+}
+
+.korvi-rida {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    align-items: center;
+    gap: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid var(--hall);
+}
+
+/* Ostukorvi pildid */
+.korvi-rida .pilt {
+    width: 100px;
+    height: 133px;
+    aspect-ratio: auto;
+    font-size: 0.7rem;
+}
+
+/* Ostukorvi ja kokkuvõtte paigutus */
+.korv {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    margin-top: 25px;
+    margin-bottom: 60px;
+}
+
+.korv h1 {
+    grid-column: 1 / -1;
+}
+
+
+.kokkuvote dl {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 10px;
+    margin: 15px 0 25px;
+}
+
+.kokkuvote dd {
+    text-align: right;
+}
+
+.kokkuvote .kokku {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.kokkuvote .nupp {
+    display: block;
+    text-align: center;
+}
+
+.kokkuvote {
+    background-color: var(--beez);
+    padding: 28px;
+    border-radius: var(--raadius);
+}
+
 @media (max-width: 800px) {
   .menuu {
     display: none; 
