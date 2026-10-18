@@ -639,6 +639,19 @@ img {
     font-size: 1.1rem;
   }
 
+    .korv {
+    grid-template-columns: 1fr;
+    gap: 25px;
+}
+
+.korv h1 {
+    grid-column: 1;
+}
+
+.kokkuvote {
+    width: 100%;
+}
+
 }
 
 
