@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="et">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ostukorv</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <p class="soodusriba">−20% kõigilt kleitidelt! Kasuta koodi <strong>hehehe2026</strong></p>
+
+  <header class="pais">
+    <div class="konteiner">
+      <a href="index.html" class="logo">SHINE</a>
+      <nav aria-label="Peamenüü">
+        <ul class="menuu">
+          <li><a href="index.html#uued">Uued tooted</a></li>
+          <li><a href="#">Allahindlus</a></li>
+        </ul>
+      </nav>
+      <div class="pais-lingid">
+        <a href="#">Konto</a>
+        <a href="korv.html" class="korvi-link" aria-current="page">Korv <span class="korvi-arv">2</span></a>
+      </div>
+    </div>
+  </header>
+  <nav class="kategooriad" aria-label="Kategooriad">
+    <ul class="konteiner">
+      <li><a href="index.html#uued">Kõik</a></li>
+      <li><a href="#">Särgid</a></li>
+      <li><a href="#">Kampsunid</a></li>
+      <li><a href="#">Seelikud</a></li>
+      <li><a href="#">Kleidid</a></li>
+    </ul>
+  </nav>
+  <main class="konteiner">
+    <nav class="asukoht" aria-label="Asukoht">
+      <a href="index.html">Avaleht</a> / Ostukorv
+    </nav>
+
+    <div class="korv">
+      <h1>Ostukorv</h1>
+
+      <section aria-label="Tooted korvis">
+        <ul class="korvi-tooted">
+          <li class="korvi-rida" data-hind="9999.90">
+            <div class="pilt">Särk</div>
+            <div>
+              <h2><a href="toode.html">Särk</a></h2>
+              <p class="detailid">Värv: beež, Suurus: M</p>
+              <label class="detailid">Kogus
+                <input type="number" value="1" min="1" max="10" class="kogus-vali">
+              </label>
+            </div>
+            <div class="parem">
+              <p class="hind">9999,90 €</p>
+              <button type="button" class="eemalda">Eemalda</button>
+            </div>
+          </li>
+
+          <li class="korvi-rida" data-hind="2.90">
+            <div class="pilt">Kootud kampsun</div>
+            <div>
+              <h2>Kootud kampsun</h2>
+              <p class="detailid">Värv: Virsik, Suurus: S</p>
+              <label class="detailid">Kogus
+                <input type="number" value="1" min="1" max="10" class="kogus-vali">
+              </label>
+            </div>
+            <div class="parem">
+              <p class="hind">2,90 €</p>
+              <button type="button" class="eemalda">Eemalda</button>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <aside class="kokkuvote" aria-label="Tellimuse kokkuvõte">
+        <h2>Kokkuvõte</h2>
+        <dl>
+          <dt id="toodeteArv">Tooted (2)</dt>
+          <dd id="toodeteSumma">10002,80 €</dd>
+          <dt>Tarne</dt>
+          <dd>Tasuta</dd>
+          <dt class="kokku">Kokku</dt>
+          <dd class="kokku" id="kogusumma">10002,80 €</dd>
+        </dl>
+        <a href="#" class="nupp">Vormista tellimus</a>
+      </aside>
+    </div>
+  </main>
+  <footer class="jalus">
+    <div class="konteiner">
+      <div>
+        <h2>Shine</h2>
+        <p>Naisteriided ilusatele naistele.</p>
+      </div>
+      <div>
+        <h2>Klienditugi</h2>
+        <ul>
+          <li><a href="#">Tarne ja tagastus</a></li>
+          <li><a href="#">Suurused</a></li>
+          <li><a href="#">KKK</a></li>
+        </ul>
+      </div>
+      <div>
+        <h2>Kontakt</h2>
+        <p>hehehe@shine.ee<br>+372 0000 0000</p>
+        <h2 class="sotsiaal">Jälgi meid</h2>
+        <ul>
+          <li><a href="#">Instagram</a></li>
+          <li><a href="#">Facebook</a></li>
+          <li><a href="#">Tiktok</a></li>
+        </ul>
+      </div>
+      <form class="uudiskiri">
+        <h2>Uudiskiri</h2>
+        <p>Liitu meie uudiskirjaga ja saa esimesena teada uutest toodetest ja soodustustest.</p>
+        <label for="epost">E-post</label>
+        <div class="uudiskiri-rida">
+          <input type="email" id="epost" name="epost" placeholder="nimi@näide.ee" required>
+          <button type="submit" class="nupp">Liitu</button>
+        </div>
+      </form>
+      <p class="autorioigus">© 2026 Shine. tere.</p>
+    </div>
+  </footer>
+
+<script>
+
+function uuendaKorv() {
+    let kogusumma = 0;
+    let toodeteArv = 0;
+
+    let tooted = document.querySelectorAll(".korvi-rida");
+
+    for (let toode of tooted) {
+        let hind = Number(toode.dataset.hind);
+        let kogus = Number(toode.querySelector(".kogus-vali").value);
+
+        toodeteArv += kogus;
+        kogusumma += hind * kogus;
+    }
+
+    document.getElementById("toodeteArv").textContent =
+        "Tooted (" + toodeteArv + ")";
+
+    document.getElementById("toodeteSumma").textContent =
+        kogusumma.toFixed(2).replace(".", ",") + " €";
+
+    document.getElementById("kogusumma").textContent =
+        kogusumma.toFixed(2).replace(".", ",") + " €";
+
+    document.querySelector(".korvi-arv").textContent = toodeteArv;
+}
+
+function eemaldaToode(nupp) {
+    let rida = nupp.closest(".korvi-rida");
+    rida.remove();
+    uuendaKorv();
+}
+
+let eemaldaNupud = document.querySelectorAll(".eemalda");
+
+for (let nupp of eemaldaNupud) {
+    nupp.addEventListener("click", function() {
+        eemaldaToode(nupp);
+    });
+}
+
+let koguseValjad = document.querySelectorAll(".kogus-vali");
+
+for (let vali of koguseValjad) {
+    vali.addEventListener("input", uuendaKorv);
+}
+
+uuendaKorv();
+</script>
+
+
+</body>
+</html>
